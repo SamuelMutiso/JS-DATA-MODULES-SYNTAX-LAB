@@ -7,7 +7,17 @@ function combineUsers(...args) {
   let combinedObject = {
     users: []
   };
-  
+  // now we need to loop through arge and also merge these arrays using spread operator
+  args.forEach(userArray => {
+    // here now we need to use (...) this spread operator to fill usernames intp the main array
+    combinedObject.users = [...combinedObject.users, ...userArray];
+  });
+
+  // here we need to get todays date formatted and M/d/yyyy (Month day year)
+  combinedObject.merge_date = Date.today().toString("M/d/yyyy");
+
+  // now this object should return
+  return combinedObject;
 }
 
 module.exports = {
